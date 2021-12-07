@@ -76,7 +76,7 @@ int main()
 	{
 		cout << i << " " << age_fishes[i] << endl;
 	}
-	int sum_of_fish = std::accumulate(age_fishes.begin(), age_fishes.end(),
+	long long sum_of_fish = std::accumulate(age_fishes.begin(), age_fishes.end(),
 		decltype(age_fishes)::value_type(0));
 		
 	cout << "Part2: " << sum_of_fish << endl;
