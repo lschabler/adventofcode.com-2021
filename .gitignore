@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /Day2/Day2/bin
 /Day2/Day2/obj
+/token.txt
