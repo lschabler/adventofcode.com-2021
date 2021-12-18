@@ -28,7 +28,7 @@ int main()
 {
     std::cout << "Hello Day15!\n"; 
 
-	std::ifstream infile("input_small.txt");
+	std::ifstream infile("input.txt");
 	std::string line;
 
 	vector<string> input;
@@ -49,27 +49,38 @@ int main()
 
 
 	vector<vector<long>> big_map;
+	vector<vector<long>> risk_map;
 	for (int risk_y = 0; risk_y < 5; risk_y++)
 	{
 			for (size_t i = 0; i < map.size(); i++)
 			{
 				vector<long> tmp;
+				vector<long> tmp_risk;
 				for (int risk_x = 0; risk_x < 5; risk_x++)
 				{
 					int risk_level = risk_y + risk_x;
+					//cout <<  risk_level;
 					for (size_t j = 0; j < map[i].size(); j++)
 					{
+						//long val = (map[i][j] + risk_level);
 						long val = (map[i][j] + risk_level) % 10;
+						if ((map[i][j] + risk_level) >= 10)
+							val +=1 ;
 						//cout << val << ",";
 						tmp.push_back(val);
+						tmp_risk.push_back(map[i][j]);
 					}
 				}
 				big_map.push_back(tmp);
+				risk_map.push_back(tmp_risk);
+				//cout << endl;
 			}
 		
 		//cout << endl;
 	}
-	printmap(big_map);
+	//printmap(big_map);
+
+	//printmap(risk_map);
 
 	map = vector<vector<long>>(big_map);
 
